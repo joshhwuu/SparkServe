@@ -1,7 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import axios from 'axios'
+import { useEffect } from 'react';
 
 function App() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('./data/users.json');
+        const data = response.data;
+        console.log(data);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -15,7 +31,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          
         </a>
       </header>
     </div>

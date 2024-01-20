@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "first_name": "Jaden",
+    "last_name": "Hums",
+    "email": "jadenhums51@gmail.com",
+    "age": "21",
+    "bio": "I like sports",
+    "postal_code": "",
+    "skills": ["valorant", "baseball", "golf", "skiing", "computer science"],
+    "personality": ["fun", "amazing", "goat", "fuuny", "amazing"],
+    "picture": "picture"
+  }
+]
