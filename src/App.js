@@ -1,7 +1,10 @@
 import './App.css';
 import axios from 'axios'
 import { useEffect } from 'react';
-import Router from './Router';
+import { Routes, Route } from "react-router-dom"
+
+import Main from "./containers/Main"
+import Message from "./containers/Message"
 
 import React from 'react'
 import { Typography } from '@mui/material';
@@ -25,10 +28,13 @@ function App() {
   return (
     <div className="App">
       <Container maxWidth="sm">
-        <Typography component="div" style={{ 
+        <Typography component="div" style={{
           backgroundColor: 'Orange', height: '100vh', width: '451pt'
         }}>
-          <Router />
+          <Routes>
+            <Route path="Message" element={<Message />} />
+            <Route path="/" element={<Main />} />
+          </Routes>
         </Typography>
       </Container>
     </div>
