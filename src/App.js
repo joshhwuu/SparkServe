@@ -6,11 +6,11 @@ import { createGlobalStyle } from 'styled-components'
 
 import Main from './containers/Main'
 import Message from './containers/Message'
-import Login from './containers/Login';
-import Looking from './components/Looking';
-import Open from './components/Open';
-import ProfilePage from './components/UserProfile';
 
+import Login from './containers/Login'
+import Looking from './components/Looking'
+import Open from './components/Open'
+import ProfilePage from './components/UserProfile';
 
 import React from 'react'
 import { Typography } from '@mui/material';
