@@ -10,7 +10,7 @@ function Login() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '65vh', // Adjust the height as needed
+        height: '932px', // Adjust the height as needed
         gap: 30,
       }}
     >
@@ -29,9 +29,10 @@ function Welcome() {
         <StyledLoginFields style={{ marginBottom: '30px' }}>
         <TextField
           required
+          variant='filled'
           style={{width: '100%', color: '#1E1E1E'}}
           id="outlined-required"
-          defaultValue="Username"
+          label="Username"
         />
         </StyledLoginFields>
       </div>
@@ -39,9 +40,10 @@ function Welcome() {
         <StyledLoginFields style={{ marginBottom: '30px'}}>
         <TextField
           required
+          variant='filled'
           style={{width: '100%', color: '#1E1E1E'}}
           id="outlined-required"
-          defaultValue="Password"
+          label="Password"
         />
         </StyledLoginFields>
       </div>
