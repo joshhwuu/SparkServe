@@ -4,12 +4,6 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@fontsource/poppins";
 import { users } from '../data/userData'
 
-const images = [
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652366604/demo_image5.jpg",
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345874/demo_image1.jpg",
-];
-
 
 // Experience.propTypes = {
 //     imageUrl: PropTypes.any,
@@ -91,7 +85,7 @@ function ProfilePage() {
                 </div>
             ))}
         </div>
-            <LowerMenu/>
+            <LowerMenu skills={user[0]?.skills} aboutMe={user[0]?.bio} openTo={user[0]?.open_to} vibes={user[0]?.vibe} />
         </div>
     );
 }
@@ -459,15 +453,51 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
     )
 }
 
-function LowerMenu() {
+function LowerMenu({ skills = [], aboutMe = "", openTo = [], vibes = [] }) {
     return (
         <>
             <div className="lowerMenuContainer">
                 <div className="openToTitle">
                     Open To...
                 </div>
+                <div className="trait-row" style={{ display: 'flex', gap: '10px'}}>
+                    {openTo.map((want, index) => (
+                        <div key={index} className="trait-box" style={{background: '#323C58', borderRadius: '20px', padding: '10px', maxWidth: '200px', color: 'white'}}>
+                            {want}
+                        </div>
+                    ))}
+                </div>
+                <div className="openToTitle">
+                    About me
+                </div>
+                <div style={{color: '#353234', fontFamily: '500 10px Poppins, sans-serif', fontSize: '12px', fontWeight: 400, lineHeight: 'normal', textAlign: 'left'}}>
+                   {aboutMe}
+                </div>
+                <div className="openToTitle">
+                    Skills
+                </div>
+                <div className="trait-row" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                    {skills.map((skill, index) => (
+                        <div key={index} className="trait-box" style={{background: '#353234', borderRadius: '20px', padding: '10px', maxWidth: '200px', color: 'white'}}>
+                            {skill}
+                        </div>
+                    ))}
+                </div>
+                <div className="openToTitle">
+                    I am...
+                </div>
+                <div className="trait-row" style={{ display: 'flex', gap: '10px', flexWrap: 'wrap'}}>
+                    {vibes.map((vibe, index) => (
+                        <div key={index} className="trait-box" style={{background: '#353234', borderRadius: '20px', padding: '10px', maxWidth: '200px', color: 'white'}}>
+                            {vibe}
+                        </div>
+                    ))}
+                </div>
             </div>
             <style jsx> {`
+                .trait-row {
+                    max-width: 413px
+                }
                 .lowerMenuContainer {
                     display: flex;
                     flex-direction: column;
@@ -487,6 +517,7 @@ function LowerMenu() {
 
                     width: 120px;
                     height: 30px;
+                    text-align: left;
 
                     //font: 400 20px Poppins, sans-serif;
 
