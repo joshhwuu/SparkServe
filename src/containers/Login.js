@@ -9,7 +9,7 @@ function Login() {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        height: '100vh', // Adjust the height as needed
+        height: '65vh', // Adjust the height as needed
         gap: 30,
       }}
     >

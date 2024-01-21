@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <Container maxWidth="sm">
         <Typography component="div" style={{
-          backgroundColor: '#323C58', height: '100vh', width: '451pt'
+          backgroundColor: '#323C58', height: '932px', width: '430px'
         }}>
           <Routes>
             <Route path="Message" element={<Message />} />
