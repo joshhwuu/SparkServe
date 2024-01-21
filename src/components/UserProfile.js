@@ -1,4 +1,4 @@
-import React, { useCallback, useState, useEffect } from "react";
+import React, { useCallback, useState, useEffect, useReducer } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "@fontsource/poppins";
@@ -22,13 +22,13 @@ function ProfilePage() {
 
     const processLike = useCallback((data) => {
         generateRandomUser(data);
-        window.location.reload();
     }, []);
 
     const generateRandomUser = useCallback((data) => {
         const randomUser = data[Math.floor(Math.random() * data.length)];
         console.log(randomUser);
         setUser([randomUser])
+        setData(data.filter(item => item.id !== randomUser.id));
     }, []);
 
     useEffect(() => {
@@ -36,7 +36,7 @@ function ProfilePage() {
         console.log(users)
         generateRandomUser(users);
     }, []);
-
+    
     return (
         <div
             style={{
