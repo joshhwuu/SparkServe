@@ -4,6 +4,8 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import durationIcon from "../assets/duration_icon.png"
 import * as PropTypes from "prop-types";
 import {useState} from "react";
+import "@fontsource/poppins";
+
 
 const images = [
     "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
@@ -23,7 +25,7 @@ const images = [
 
 function ProfilePage() {
     const profiles = [
-        { name: 'Louise', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Vancouver, BC', imageUrl: require('../assets/louise.png') },
+        { name: 'Louise', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Kitsilano', imageUrl: require('../assets/louise.png') },
     ];
 
     const experiences = [
@@ -34,7 +36,7 @@ function ProfilePage() {
             bullet_point: 'Volunteered with a non-profit to clean Wreck Beach at UBC, removing 300+ pounds of plastic.',
             imageUrl: require('../assets/louise_beach.png')},
         { title: 'Event Helper', subtitle: "Vancouver Sun Run", duration: '1 day', tags: ['Marathon Support', 'Community', 'Teamwork'],
-            bullet_point: 'Coordinated the hydration station, ensuring all participants stayed refreshed during the Vancouver Sun Run marathon event and contributing to the team\'s recognition for outstanding volunteer support.\n',
+            bullet_point: 'Coordinated the hydration station, ensuring all participants stayed refreshed during the Vancouver Sun Run marathon, contributing to the team\'s recognition for outstanding volunteer support.\n',
             imageUrl: require('../assets/louise_event_helper.png')}
     ];
 
@@ -75,6 +77,7 @@ function ProfilePage() {
                 ))}
             </Carousel>
             <SwipeButtons/>
+            <LowerMenu/>
         </div>
     );
 }
@@ -138,7 +141,7 @@ function Profile({ name, age, pronouns, interests, location, imageUrl }) {
         }
         .span {
           position: relative;
-          align-self: stretch;
+          align-self: start;
           display: flex;
           margin-top: 492px;
           justify-content: space-between;
@@ -293,7 +296,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
 
                 .span {
                     position: relative;
-                    align-self: stretch;
+                    align-self: start;
                     display: flex;
                     margin-top: 472px;
                     justify-content: space-between;
@@ -468,5 +471,57 @@ const SwipeButtons = () => {
         </div>
     );
 };
+
+function LowerMenu() {
+    return (
+        <>
+            <div className="lowerMenuContainer">
+                <div className="openToTitle">
+                    Open To...
+                </div>
+            </div>
+            <style jsx> {`
+                .lowerMenuContainer {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    padding: 0;
+                    gap: 10px;
+
+                    position: relative;
+                    width: 413px;
+                    height: 579px;
+                    left: 17px;
+                    top: 10px;
+                }
+                
+                .openToTitle {
+                    /* Open to... */
+
+                    width: 120px;
+                    height: 30px;
+
+                    //font: 400 20px Poppins, sans-serif;
+
+                    font-family: 'Poppins', sans-serif;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 20px;
+                    line-height: 30px;
+                    /* identical to box height */
+
+                    color: #1E1E1E;
+
+
+                    /* Inside auto layout */
+                    flex: none;
+                    order: 0;
+                    flex-grow: 0;
+
+                }
+            `}</style>
+        </>
+    );
+}
 
 export default ProfilePage;
