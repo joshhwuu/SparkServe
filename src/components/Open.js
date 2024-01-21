@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Button from '@mui/material/Button';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Link } from 'react-router-dom';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 function Open() {
     return (
@@ -23,17 +25,28 @@ function Open() {
 
 function FindOpen() {
     const [selectedButton, setSelectedButton] = useState([]);
+    const [selectAll, setSelectAll] = useState(false);
 
     const buttons = ['Arts & Culture', 'Community Service', 'Environment', 'Food', 'Photography',
         'Sports', 'Enterntainment', 'Music', 'Technology', 'Health & Wellness', 'Education'];
 
-    const handleButtonClick = (index) => {
-        if (selectedButton.includes(index)) {
-            setSelectedButton(selectedButton.filter((button) => button !== index));
-        } else {
-            setSelectedButton([...selectedButton, index]);
+        const handleButtonClick = (index) => {
+            if (selectAll) {
+                setSelectAll(false);
+                setSelectedButton([]);
+            } else {
+                if (selectedButton.includes(index)) {
+                    setSelectedButton(selectedButton.filter((button) => button !== index));
+                } else {
+                    setSelectedButton([...selectedButton, index]);
+                }
+            }
         }
-    }
+    
+        const handleSelectAllChange = () => {
+            setSelectAll(!selectAll);
+            setSelectedButton(selectAll ? [] : buttons.map((_, index) => index));
+        }
 
     return (
         <div>
@@ -58,6 +71,12 @@ function FindOpen() {
             <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />}>
                 Continue
             </ContinueButton>
+            <SwitchContainer>
+                <StyledFormControlLabel
+                    control={<Switch checked={selectAll} onChange={handleSelectAllChange} />}
+                    label="Select All"
+                />
+            </SwitchContainer>
             
         </div>
     );
@@ -85,5 +104,18 @@ const ContinueButton = styled(Button)`
 margin-top: 10px;
 display: inline-block;
 `;
+
+const SwitchContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+`;
+
+const StyledFormControlLabel = styled(FormControlLabel)`
+    && {
+        color: #E9E9E9;
+    }
+`;
+
 
 export default Open;
