@@ -98,7 +98,9 @@ margin-right: 16px;
 display: flex;
 flex-wrap: wrap;
 gap: 8px;
-margin-left: 50px
+margin-left: 50px;
+    margin-bottom: 15px;
+    
 `;
 
 const ContinueButton = styled(Button)`
