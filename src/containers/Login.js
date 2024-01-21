@@ -1,11 +1,12 @@
 import styled from 'styled-components';
-import index from '../index.css';
 import { TextField, Button} from '@mui/material';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
     <div
       style={{
+        backgroundColor: '#323C58',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -48,6 +49,8 @@ function Welcome() {
         <Button 
           style={{ marginBottom: '30px', width: '314px', height: '52px', borderRadius: '15px', flexShrink: '0'}}
           variant='contained'
+          component={Link} 
+          to={'/profile'}
         >
             Login
         </Button>
