@@ -6,9 +6,11 @@ import { createGlobalStyle } from 'styled-components'
 
 import Main from './containers/Main'
 import Message from './containers/Message'
+
 import Login from './containers/Login'
 import Looking from './components/Looking'
 import Open from './components/Open'
+import ProfilePage from './components/UserProfile';
 
 import React from 'react'
 import { Typography } from '@mui/material';
@@ -33,10 +35,10 @@ function App() {
     <div className="App">
       <Container maxWidth="sm">
         <Typography component="div" style={{
-          backgroundColor: '#323C58', height: '932px', width: '430px'
+          height: '932px', width: '430px'
         }}>
           <Routes>
-            <Route path="Message" element={<Message />} />
+            <Route path="profile" element={<ProfilePage />} />
             <Route path="/" element={<Main />} />
             <Route path="/login" element={<Login />} />
             <Route path="/looking" element={<Looking />} />

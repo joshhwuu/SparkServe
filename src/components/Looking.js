@@ -43,18 +43,17 @@ function LookingFor() {
                         key={index}
                         variant={selectedButton.includes(index) ? 'contained' : 'outlined'}
                         onClick={() => handleButtonClick(index)}
-                        style={{
-                            marginRight: '0px',
-                            color: '#E9E9E9',
-                            borderRadius: '15px'
-                        }}
+                        style={{ marginRight: '0px', 
+                                color:'#E9E9E9',
+                                borderRadius: '15px'
+                                }}
                         size="small"
                     >
                         {button}
                     </Button>
                 ))}
             </ButtonContainer>
-            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />} iuyvipgugiu>
+            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />}iuyvipgugiu>
                 Continue
             </ContinueButton>
         </div>

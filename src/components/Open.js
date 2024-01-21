@@ -85,3 +85,13 @@ margin-top: 10px;
 display: inline-block;
 `;
 export default Open;
+            <LookingFor />
+        </div>
+    );
+  }
+
+  function Open() {
+    
+  }
+  
+  export default Open;
