@@ -3,6 +3,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import durationIcon from "../assets/duration_icon.png"
 import * as PropTypes from "prop-types";
+import {useState} from "react";
 
 const images = [
     "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
@@ -75,7 +76,7 @@ function ProfilePage() {
                     </div>
                 ))}
             </Carousel>
-            {/*<Profile/>*/}
+            <SwipeButtons/>
         </div>
     );
 }
@@ -323,7 +324,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
                     flex-grow: 0;
 
                     font: 700 40px Lexend, sans-serif;
-                    
+
                     text-align: left;
                 }
 
@@ -339,7 +340,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
                     text-shadow: 0px 2.41135px 6.02837px rgba(0, 0, 0, 0.5);
 
                 }
-                
+
                 .div-subtitle {
                     /* Freelance */
 
@@ -359,7 +360,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
                     text-align: left;
 
                 }
-                
+
                 .duration-img {
                     /* Frame 8 */
 
@@ -447,5 +448,21 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
         </>
     )
 }
+
+const SwipeButtons = () => {
+    // Assuming you have locally stored images
+    const swipeButtons = ['rewind', 'no', 'yes', 'save'];
+    const [message, setMessage] = useState('');
+
+    const handleButtonClick = (index) => {
+        // Set a message based on the clicked button
+        setMessage(`Button ${index + 1} clicked!`);
+    };
+
+
+    return (
+§ˆ
+    );
+};
 
 export default ProfilePage;
