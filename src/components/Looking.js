@@ -11,7 +11,8 @@ function Looking() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '65vh', // Adjust the height as needed
+                backgroundColor:'#323C58',
+                height: '932px', // Adjust the height as needed
                 gap: 30,
             }}
         >

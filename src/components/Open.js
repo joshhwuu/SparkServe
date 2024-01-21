@@ -11,7 +11,8 @@ function Open() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                height: '65vh', // Adjust the height as needed
+                backgroundColor:'#323C58',
+                height: '932px', // Adjust the height as needed
                 gap: 30,
             }}
         >
@@ -84,14 +85,5 @@ const ContinueButton = styled(Button)`
 margin-top: 10px;
 display: inline-block;
 `;
-export default Open;
-            <LookingFor />
-        </div>
-    );
-  }
 
-  function Open() {
-    
-  }
-  
-  export default Open;
+export default Open;
