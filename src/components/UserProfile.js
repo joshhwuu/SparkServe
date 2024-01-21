@@ -53,7 +53,7 @@ function ProfilePage() {
                 overflow: 'auto',
             }}
         >
-            <Carousel useKeyboardArrows={true} showThumbs={false} selectedItem={0}>
+            <Carousel useKeyboardArrows={true} showThumbs={false} showStatus={false} selectedItem={0}>
                 {user?.map((profile, index) => (
                     <div className="slide_profiles" key={index}>
                         <Profile
@@ -340,11 +340,11 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
 
                 .div-duration {
                     position: absolute;
-                    left: 70%;
+                    left: 62.5%;
                     right: 3.95%;
                     top: 8.12%;
                     bottom: 87.37%;
-                    max-width: 150px;
+                    width: 160px;
                     font: 700 24px Lexend, sans-serif;
                     color: #E9E9E9;
                     text-shadow: 0px 2.41135px 6.02837px rgba(0, 0, 0, 0.5);

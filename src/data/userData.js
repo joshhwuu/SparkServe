@@ -1,9 +1,24 @@
 import louise_event_helper from '../assets/louise_event_helper.png';
 import louise_beach from '../assets/louise_beach.png';
-import louise from '../assets/louise.png';
+import louise_babysitter from '../assets/louise_babysitter.png';
+import max_gardening from '../assets/max_gardening.png';
+import max_coding from '../assets/max_coding.png';
+import max_food from '../assets/max_food.png';
+import jordan_coding from '../assets/jordan_coding.png';
+import riley_design from '../assets/riley_design.png';
+import riley_arts from '../assets/riley_arts.png';
+import jaden_music from '../assets/jaden_music.png';
 
+
+
+
+import louise from '../assets/louise.png';
+import riley from '../assets/riley.png';
+import jaden from '../assets/jaden.png';
 import max from '../assets/max.png';
-import max_babysitter from '../assets/louise_babysitter.png';
+import jordan from '../assets/jordan.png';
+
+
 
 export const users = [
   {
@@ -17,8 +32,8 @@ export const users = [
     "bio": "I'm a hard-working high school senior who loves events in Inglewood!",
     "postal_code": "V6T1X1",
     "location": "Vancouver",
-    "skills": ["painting", "woodworking", "recycling management" , "excel"],
-    "imageUrl": louise,
+    "skills": ["Painting", "Recycling Management"],
+    "imageUrl": jaden,
     "prompts": [
       {
         "id": 1,
@@ -31,25 +46,25 @@ export const users = [
         "answer": "I can keep the team spirit up in a hard time!"
       }
     ],
-    "vibe": ["love music", "social", "easy-going"],
+    "vibe": ["Love music", "Social", "Easy-going"],
     "experiences": [
       {
         "id": 1,
         "title": "Backstage Helper",
         "subtitle": "Calgary",
-        "duration": "Weekend",
+        "duration": "2 days",
         "tags": ["Music Equipment"],
-        "bullet_point": "Description of Experience 1",
-        "imageUrl": louise_beach
+        "bullet_point": "Managed 200 amps and guitars for a rock festival",
+        "imageUrl": jaden_music
       },
       {
         "id": 2,
         "title": "Childcare",
-        "subtitle": "",
+        "subtitle": "Family Help",
         "bullet_point": "Babysat and tutored four kids between 3 and 11 years old",
         "duration": "3 years",
         "tags": ["4 kids"],
-        "imageUrl": louise_event_helper
+        "imageUrl": louise_babysitter
       }
     ],
     "rejected_events": [],
@@ -58,16 +73,16 @@ export const users = [
   },
   {
     "id": 2,
-    "first_name": "Avery",
+    "first_name": "Max",
     "last_name": "Smith",
-    "pronouns": "she/her",
-    "email": "avery.smith@example.com",
-    "age": "19",
+    "pronouns": "he/him",
+    "email": "max.smith@example.com",
+    "age": "17",
     "employment": "student",
-    "bio": "I'm a college sophomore passionate about environmental sustainability.",
+    "bio": "I'm a college sophomore passionate about tech, machinery, and sustainability.",
     "postal_code": "M5J2H3",
-    "location": "Vancouver",
-    "skills": ["environmental advocacy", "public speaking", "research", "social media"],
+    "location": "Vancouver, BC",
+    "skills": ["Nature advocacy", "Public Speaking", "Research"],
     "imageUrl": max,
     "prompts": [
       {
@@ -81,24 +96,34 @@ export const users = [
         "answer": "connecting with diverse groups of people"
       }
     ],
-    "vibe": ["environmentalist", "community-focused", "dedicated"],
+    "vibe": ["Innovation Junkie", "Tech for Good", "Adventure Seeker"],
     "experiences": [
       {
         "id": 1,
-        "title": "Campaign Helper",
+        "title": "Garden Helper",
         "subtitle": "Green Earth Initiative",
-        "duration": "6 months",
-        "tags": ["Childcare", "Babysitting", "First Aid"],
-        "bullet_point": "Coordinated and led campaigns to raise awareness about climate change.",
-        "imageUrl": max_babysitter
+        "duration": "8 months",
+        "tags": ["Gardening", "Sustainability", "Nature"],
+        "bullet_point": "Dedicated over 100 volunteer hours to Terra Nova Garden, actively participating in tasks such as planting, weeding, and harvesting.",
+        "imageUrl": max_gardening,
       },
       {
         "id": 2,
-        "title": "Volunteer",
-        "subtitle": "Local Wildlife Conservation",
-        "duration": "1 year",
-        "tags": ["Wildlife Protection"],
-        "bullet_point": "Engaged with the community to promote wildlife conservation initiatives."
+        "title": "Code Tutor",
+        "subtitle": "Freelance",
+        "duration": "3 years",
+        "tags": ["Coding", "Tutoring", "Working with Children"],
+        "bullet_point": "Mentored aspiring coders, providing personalized tutoring sessions in programming languages such as Python and JavaScript to enhance their coding skills.",
+        "imageUrl": max_coding
+      },
+      {
+        "id": 3,
+        "title": "Food Service",
+        "subtitle": "The Door is Open",
+        "duration": "1 month",
+        "tags": ["Food Charity", "Community Service", "Compassion"],
+        "bullet_point": "Served over 500 nutritious meals to community members in need, fostering a sense of warmth and inclusion.",
+        "imageUrl": max_food
       }
     ],
     "rejected_events": [],
@@ -116,7 +141,8 @@ export const users = [
     "bio": "I'm a creative soul who enjoys bringing ideas to life through art and design.",
     "postal_code": "H2X1Y8",
     "location": "Vancouver",
-    "skills": ["graphic design", "illustration", "photography", "creative writing"],
+    "skills": ["Graphic design", "Illustration", "Photography"],
+    "imageUrl": riley,
     "prompts": [
       {
         "id": 1,
@@ -129,7 +155,7 @@ export const users = [
         "answer": "translating emotions into visual storytelling"
       }
     ],
-    "vibe": ["artistic", "imaginative", "open-minded"],
+    "vibe": ["Artistic", "Imaginative", "Open-minded"],
     "experiences": [
       {
         "id": 1,
@@ -137,7 +163,8 @@ export const users = [
         "subtitle": "",
         "duration": "2 years",
         "tags": ["Visual Arts"],
-        "bullet_point": "Worked with clients to create visually appealing and effective designs."
+        "bullet_point": "Worked with clients to create visually appealing and effective designs.",
+        "imageUrl": riley_design
       },
       {
         "id": 2,
@@ -145,7 +172,8 @@ export const users = [
         "subtitle": "Community Art Center",
         "duration": "1 year",
         "tags": ["Art Education"],
-        "bullet_point": "Conducted workshops to inspire creativity and artistic expression in participants."
+        "bullet_point": "Conducted workshops to inspire creativity and artistic expression in participants.",
+        "imageUrl": riley_arts
       }
     ],
     "rejected_events": [2],
@@ -156,7 +184,7 @@ export const users = [
     "id": 4,
     "first_name": "Jordan",
     "last_name": "Davis",
-    "pronouns": "he/him",
+    "pronouns": "she/her",
     "email": "jordandavis@example.com",
     "age": "25",
     "employment": "software engineer",
@@ -164,6 +192,7 @@ export const users = [
     "postal_code": "K1P5M7",
     "location": "Vancouver",
     "skills": ["Python", "JavaScript", "React", "Git"],
+    "imageUrl": jordan,
     "prompts": [
       {
         "id": 1,
@@ -176,7 +205,7 @@ export const users = [
         "answer": "problem-solving and debugging complex issues"
       }
     ],
-    "vibe": ["tech-savvy", "innovative", "collaborative"],
+    "vibe": ["Tech-savvy", "Innovative", "Collaborative"],
     "experiences": [
       {
         "id": 1,
@@ -184,19 +213,80 @@ export const users = [
         "subtitle": "GitHub Community",
         "duration": "3 years",
         "tags": ["Open Source"],
-        "bullet_point": "Contributed code and collaborated with developers on various open-source projects."
+        "bullet_point": "Contributed code and collaborated with developers on various open-source projects.",
+        "imageUrl": jordan_coding
       },
       {
         "id": 2,
-        "title": "Software Developer",
+        "title": "Software Dev",
         "subtitle": "Tech Innovations Inc.",
         "duration": "6 months",
         "tags": ["Software Development"],
-        "bullet_point": "Assisted in developing and testing software solutions for clients."
+        "bullet_point": "Assisted in developing and testing software solutions for clients.",
+        "imageUrl": max_coding
       }
     ],
     "rejected_events": [1],
     "accepted_events": [],
     "matched_events": []
-  }  
+  },
+  {
+    "id": 5,
+    "first_name": "Louise",
+    "last_name": "Arora",
+    "pronouns": "she/her",
+    "email": "louise@gmail.com",
+    "age": "17",
+    "employment": "volunteer",
+    "bio": "Lively high school sophomore who loves events in Van!",
+    "postal_code": "V6T1X1",
+    "location": "Vancouver",
+    "skills": ["Recycling" , "Excel", "Childcare"],
+    "imageUrl": louise,
+    "prompts": [
+      {
+        "id": 1,
+        "question": "my weekends look like...",
+        "answer": "live music with friends"
+      },
+      {
+        "id": 2,
+        "question": "my biggest strength is...",
+        "answer": "I can keep the team spirit up in a hard time!"
+      }
+    ],
+    "vibe": ["Chatty", "Social", "Easy-going"],
+    "experiences": [
+      {
+        "id": 1,
+        "title": "Beach Cleanup",
+        "subtitle": "SurfGuardians",
+        "duration": "1 week",
+        "tags": ["Environment", "Community Service", "Marine Protection"],
+        "bullet_point": "Volunteered with a non-profit to clean Wreck Beach at UBC, removing 300+ pounds of plastic.",
+        "imageUrl": louise_beach
+      },
+      {
+        "id": 2,
+        "title": "Babysitter",
+        "subtitle": "Freelance",
+        "bullet_point": "Provided top-notch childcare services for families, creating a safe and engaging environment for children to learn and play.",
+        "duration": "3 years",
+        "tags": ["4 Kids", "Childcare", "First Aid"],
+        "imageUrl": louise_babysitter
+      },
+      {
+        "id": 3,
+        "title": 'Event Helper',
+        "subtitle": "Vancouver Sun Run",
+        "bullet_point": 'Coordinated the hydration station, ensuring all participants stayed refreshed during the Vancouver Sun Run marathon, contributing to the team\'s recognition for outstanding volunteer support.\n',
+        "duration": '1 day',
+        "tags": ['Marathon Support', 'Community', 'Teamwork'],
+        "imageUrl": louise_event_helper
+      },
+    ],
+    "rejected_events": [],
+    "accepted_events": [1],
+    "matched_events": []
+  },
 ]
