@@ -24,7 +24,6 @@ const images = [
 function ProfilePage() {
     const profiles = [
         { name: 'Louise', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Vancouver, BC', imageUrl: require('../assets/louise.png') },
-        // { name: 'Alex', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Vancouver, BC', imageUrl: {photo} },
     ];
 
     const experiences = [
@@ -37,7 +36,6 @@ function ProfilePage() {
         { title: 'Event Helper', subtitle: "Vancouver Sun Run", duration: '1 day', tags: ['Marathon Support', 'Community', 'Teamwork'],
             bullet_point: 'Coordinated the hydration station, ensuring all participants stayed refreshed during the Vancouver Sun Run marathon event and contributing to the team\'s recognition for outstanding volunteer support.\n',
             imageUrl: require('../assets/louise_event_helper.png')}
-        // { name: 'Alex', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Vancouver, BC', imageUrl: {photo} },
     ];
 
     return (
@@ -232,10 +230,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
             <div className="div">
                 <div className="div-2">
                     <img loading="lazy" src={imageUrl} className="img" alt={`experience-${title}`}/>
-                    {/*<div>*/}
                     <div className="div-duration">({duration})</div>
-                    {/*    <img className="duration-img" src={require('./../assets/duration_icon.png')}/>*/}
-                    {/*</div>*/}
                     <span className="span">
                         <div className="div-experience-title">
                             {title}
@@ -259,9 +254,7 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
                     <div className="div-bullet-point">{bullet_point}</div>
                 </div>
             </div>
-            <div>
 
-            </div>
             <style jsx>{`
                 .div {
                     display: flex;
@@ -450,18 +443,29 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
 }
 
 const SwipeButtons = () => {
-    // Assuming you have locally stored images
     const swipeButtons = ['rewind', 'no', 'yes', 'save'];
-    const [message, setMessage] = useState('');
 
+    // TODO: Change temporary stub for button functionality
+    const [message, setMessage] = useState('');
     const handleButtonClick = (index) => {
-        // Set a message based on the clicked button
         setMessage(`Button ${index + 1} clicked!`);
     };
 
 
     return (
-§ˆ
+        <div style={{ display: 'flex', gap: '25px', justifyContent:'center', alignItems:'center', marginTop: "10px" }}>
+            {swipeButtons.map((image, index) => (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img
+                        key={index}
+                        src={require('./../assets/' + image + '.png')}
+                        alt={`Button ${index + 1}`}
+                        onClick={() => handleButtonClick(index)}
+                    />
+                </div>
+            ))}
+            {message && <p>{message}</p>}
+        </div>
     );
 };
 
