@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import Button from '@mui/material/Button';
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 import { Link } from 'react-router-dom';
+import Switch from '@mui/material/Switch';
+import FormControlLabel from '@mui/material/FormControlLabel';
 
 function Looking() {
     return (
@@ -11,7 +13,7 @@ function Looking() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                backgroundColor:'#323C58',
+                backgroundColor: '#323C58',
                 height: '932px', // Adjust the height as needed
                 gap: 30,
             }}
@@ -23,16 +25,27 @@ function Looking() {
 
 function LookingFor() {
     const [selectedButton, setSelectedButton] = useState([]);
+    const [selectAll, setSelectAll] = useState(false);
 
     const buttons = ['Volunteer', 'Remote Work', 'Paid Work', 'Temp. Work', 'Freelance'
         , 'Internship', 'Apprenticeship', 'Part-time', 'Full-time', 'Contract'];
 
     const handleButtonClick = (index) => {
-        if (selectedButton.includes(index)) {
-            setSelectedButton(selectedButton.filter((button) => button !== index));
+        if (selectAll) {
+            setSelectAll(false);
+            setSelectedButton([]);
         } else {
-            setSelectedButton([...selectedButton, index]);
+            if (selectedButton.includes(index)) {
+                setSelectedButton(selectedButton.filter((button) => button !== index));
+            } else {
+                setSelectedButton([...selectedButton, index]);
+            }
         }
+    }
+
+    const handleSelectAllChange = () => {
+        setSelectAll(!selectAll);
+        setSelectedButton(selectAll ? [] : buttons.map((_, index) => index));
     }
 
     return (
@@ -44,19 +57,26 @@ function LookingFor() {
                         key={index}
                         variant={selectedButton.includes(index) ? 'contained' : 'outlined'}
                         onClick={() => handleButtonClick(index)}
-                        style={{ marginRight: '0px', 
-                                color:'#E9E9E9',
-                                borderRadius: '15px'
-                                }}
+                        style={{
+                            marginRight: '0px',
+                            color: '#E9E9E9',
+                            borderRadius: '15px'
+                        }}
                         size="small"
                     >
                         {button}
                     </Button>
                 ))}
             </ButtonContainer>
-            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />}iuyvipgugiu>
+            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />}>
                 Continue
             </ContinueButton>
+            <SwitchContainer>
+                <StyledFormControlLabel
+                    control={<Switch checked={selectAll} onChange={handleSelectAllChange} />}
+                    label="Select All"
+                />
+            </SwitchContainer>
         </div>
     );
 }
@@ -80,6 +100,18 @@ margin-left: 50px
 
 const ContinueButton = styled(Button)`
 margin-top: 10px;
+`;
+
+const SwitchContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+`;
+
+const StyledFormControlLabel = styled(FormControlLabel)`
+    && {
+        color: #E9E9E9;
+    }
 `;
 
 export default Looking;
