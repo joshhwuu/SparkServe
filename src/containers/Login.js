@@ -50,7 +50,7 @@ function Welcome() {
           style={{ marginBottom: '30px', width: '314px', height: '52px', borderRadius: '15px', flexShrink: '0'}}
           variant='contained'
           component={Link} 
-          to={'/profile'}
+          to={'/looking'}
         >
             Login
         </Button>

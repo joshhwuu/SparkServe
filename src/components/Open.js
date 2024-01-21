@@ -28,7 +28,7 @@ function FindOpen() {
     const [selectAll, setSelectAll] = useState(false);
 
     const buttons = ['Arts & Culture', 'Community Service', 'Environment', 'Food', 'Photography',
-        'Sports', 'Enterntainment', 'Music', 'Technology', 'Health & Wellness', 'Education'];
+        'Sports', 'Entertainment', 'Music', 'Technology', 'Health & Wellness', 'Education'];
 
         const handleButtonClick = (index) => {
             if (selectAll) {
@@ -68,9 +68,10 @@ function FindOpen() {
                     </Button>
                 ))}
             </ButtonContainer>
-            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/open" endIcon={<ArrowRightAltIcon />}>
+            <ContinueButton variant="contained" color="primary" LinkComponent={Link} to="/profile" endIcon={<ArrowRightAltIcon />}>
                 Continue
             </ContinueButton>
+
             <SwitchContainer>
                 <StyledFormControlLabel
                     control={<Switch checked={selectAll} onChange={handleSelectAllChange} />}
