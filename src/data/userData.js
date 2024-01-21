@@ -5,6 +5,8 @@ import louise from '../assets/louise.png';
 import max from '../assets/max.png';
 import max_babysitter from '../assets/louise_babysitter.png';
 
+import jordan from '../assets/jordan.png';
+
 export const users = [
   {
     "id": 1,
@@ -17,7 +19,10 @@ export const users = [
     "bio": "I'm a hard-working high school senior who loves events in Inglewood!",
     "postal_code": "V6T1X1",
     "location": "Vancouver",
-    "skills": ["painting", "woodworking", "recycling management" , "excel"],
+    "skills": [
+      "JavaScript", "HTML", "CSS", "React", "Node.js", "SQL", "Git", "Responsive Design", "Problem Solving"
+    ],
+    "open_to": ["volunteering", "internship", "part-time", "full-time"],
     "imageUrl": louise,
     "prompts": [
       {
@@ -68,6 +73,7 @@ export const users = [
     "postal_code": "M5J2H3",
     "location": "Vancouver",
     "skills": ["environmental advocacy", "public speaking", "research", "social media"],
+    "open_to": ["volunteering", "internship", "part-time", "full-time"],
     "imageUrl": max,
     "prompts": [
       {
@@ -81,7 +87,7 @@ export const users = [
         "answer": "connecting with diverse groups of people"
       }
     ],
-    "vibe": ["environmentalist", "community-focused", "dedicated"],
+    "vibe": ["green loving", "community-focused", "dedicated", "outgoing", "collaborative", "open-minded"],
     "experiences": [
       {
         "id": 1,
@@ -117,6 +123,7 @@ export const users = [
     "postal_code": "H2X1Y8",
     "location": "Vancouver",
     "skills": ["graphic design", "illustration", "photography", "creative writing"],
+    "open_to": ["volunteering", "internship", "part-time"],
     "prompts": [
       {
         "id": 1,
@@ -160,10 +167,12 @@ export const users = [
     "email": "jordandavis@example.com",
     "age": "25",
     "employment": "software engineer",
-    "bio": "I'm a tech enthusiast who loves coding and contributing to open-source projects.",
+    "bio": "I'm a tech enthusiast who loves coding and contributing to open-source projects. adsfas dfdas asf asd fasda d fads adsf asd",
     "postal_code": "K1P5M7",
     "location": "Vancouver",
+    "imageUrl": jordan,
     "skills": ["Python", "JavaScript", "React", "Git"],
+    "open_to": ["internship", "part-time", "full-time"],
     "prompts": [
       {
         "id": 1,
