@@ -1,11 +1,7 @@
 import './App.css';
-import axios from 'axios'
-import { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom'
-import { createGlobalStyle } from 'styled-components'
 
 import Main from './containers/Main'
-import Message from './containers/Message'
 
 import Login from './containers/Login'
 import Looking from './components/Looking'

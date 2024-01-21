@@ -36,7 +36,15 @@ function ProfilePage() {
         console.log(users)
         generateRandomUser(users);
     }, []);
-    
+
+    if (data.length === 0) {
+        return (
+            <div style={{ backgroundColor: '#323C58', width: 430, height: 932, display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'Lexend', color: 'white' }}>
+                <h1>there are no more users in your area</h1>
+            </div>
+        )
+    }
+
     return (
         <div
             style={{
