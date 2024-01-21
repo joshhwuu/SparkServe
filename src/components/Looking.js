@@ -27,8 +27,7 @@ function LookingFor() {
     const [selectedButton, setSelectedButton] = useState([]);
     const [selectAll, setSelectAll] = useState(false);
 
-    const buttons = ['Volunteer', 'Remote Work', 'Paid Work', 'Temp. Work', 'Freelance'
-        , 'Internship', 'Apprenticeship', 'Part-time', 'Full-time', 'Contract'];
+    const buttons = ['Volunteer', 'Remote Work', 'Paid Work', 'Temp. Work', 'Freelance'];
 
     const handleButtonClick = (index) => {
         if (selectAll) {

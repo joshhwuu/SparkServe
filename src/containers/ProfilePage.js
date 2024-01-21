@@ -1,11 +1,12 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-const images = [
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652366604/demo_image5.jpg",
-    "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345874/demo_image1.jpg",
-];
+
 function ProfilePage() {
+    const images = [
+        "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
+        "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652366604/demo_image5.jpg",
+        "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345874/demo_image1.jpg",
+    ];
 
     const additionalContent = (
         <div className="additional-content">

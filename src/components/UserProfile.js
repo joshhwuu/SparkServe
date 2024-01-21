@@ -1,11 +1,8 @@
-import * as React from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import durationIcon from "../assets/duration_icon.png"
-import * as PropTypes from "prop-types";
-import {useState} from "react";
 import "@fontsource/poppins";
-
+import { users } from '../data/userData'
 
 const images = [
     "https://res.cloudinary.com/ifeomaimoh/image/upload/v1652345767/demo_image2.jpg",
@@ -24,21 +21,27 @@ const images = [
 // };
 
 function ProfilePage() {
-    const profiles = [
-        { name: 'Louise', age: 16, pronouns: 'she/her', interests: ['Art Enthusiast', 'High School Student', 'Nature Lover'], location: 'Kitsilano', imageUrl: require('../assets/louise.png') },
-    ];
+    const [data, setData] = useState([]);
+    const [user, setUser] = useState([]);
 
-    const experiences = [
-        { title: 'Babysitter', subtitle: "Freelance", duration: '3 years', tags: ['Childcare', 'Babysitting', 'First Aid'],
-            bullet_point: 'Provided top-notch childcare services for families, creating a safe and engaging environment for children to learn and play.',
-            imageUrl: require('../assets/louise_babysitter.png')},
-        { title: 'Beach Cleanup', subtitle: "SurfGuardians", duration: '1 week', tags: ['Environment', 'Community Service', 'Marine Protection'],
-            bullet_point: 'Volunteered with a non-profit to clean Wreck Beach at UBC, removing 300+ pounds of plastic.',
-            imageUrl: require('../assets/louise_beach.png')},
-        { title: 'Event Helper', subtitle: "Vancouver Sun Run", duration: '1 day', tags: ['Marathon Support', 'Community', 'Teamwork'],
-            bullet_point: 'Coordinated the hydration station, ensuring all participants stayed refreshed during the Vancouver Sun Run marathon, contributing to the team\'s recognition for outstanding volunteer support.\n',
-            imageUrl: require('../assets/louise_event_helper.png')}
-    ];
+    const swipeButtons = ['rewind', 'no', 'yes', 'save'];
+
+    const processLike = useCallback((data) => {
+        generateRandomUser(data);
+        window.location.reload();
+    }, []);
+
+    const generateRandomUser = useCallback((data) => {
+        const randomUser = data[Math.floor(Math.random() * data.length)];
+        console.log(randomUser);
+        setUser([randomUser])
+    }, []);
+
+    useEffect(() => {
+        setData(users);
+        console.log(users)
+        generateRandomUser(users);
+    }, []);
 
     return (
         <div
@@ -50,20 +53,20 @@ function ProfilePage() {
                 overflow: 'auto',
             }}
         >
-            <Carousel useKeyboardArrows={true} showThumbs={false}>
-                {profiles.map((profile, index) => (
+            <Carousel useKeyboardArrows={true} showThumbs={false} selectedItem={0}>
+                {user?.map((profile, index) => (
                     <div className="slide_profiles" key={index}>
                         <Profile
-                            name={profile.name}
+                            name={profile.first_name}
                             age={profile.age}
                             pronouns={profile.pronouns}
-                            interests={profile.interests}
+                            interests={profile.skills}
                             location={profile.location}
                             imageUrl={profile.imageUrl}
                         />
                     </div>
                 ))}
-                {experiences.map((experience, index) => (
+                {user[0]?.experiences?.map((experience, index) => (
                     <div className="slide_experiences" key={index}>
                         <Experience
                             title={experience.title}
@@ -76,7 +79,18 @@ function ProfilePage() {
                     </div>
                 ))}
             </Carousel>
-            <SwipeButtons/>
+            <div style={{ display: 'flex', gap: '25px', justifyContent:'center', alignItems:'center', marginTop: "10px" }}>
+            {swipeButtons.map((image, index) => (
+                <div style={{ display: 'flex', alignItems: 'center' }}>
+                    <img
+                        key={index}
+                        src={require('./../assets/' + image + '.png')}
+                        alt={`Button ${index + 1}`}
+                        onClick={() => processLike(data)}
+                    />
+                </div>
+            ))}
+        </div>
             <LowerMenu/>
         </div>
     );
@@ -444,33 +458,6 @@ function Experience({ title, subtitle, duration, tags, bullet_point, imageUrl })
         </>
     )
 }
-
-const SwipeButtons = () => {
-    const swipeButtons = ['rewind', 'no', 'yes', 'save'];
-
-    // TODO: Change temporary stub for button functionality
-    const [message, setMessage] = useState('');
-    const handleButtonClick = (index) => {
-        setMessage(`Button ${index + 1} clicked!`);
-    };
-
-
-    return (
-        <div style={{ display: 'flex', gap: '25px', justifyContent:'center', alignItems:'center', marginTop: "10px" }}>
-            {swipeButtons.map((image, index) => (
-                <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <img
-                        key={index}
-                        src={require('./../assets/' + image + '.png')}
-                        alt={`Button ${index + 1}`}
-                        onClick={() => handleButtonClick(index)}
-                    />
-                </div>
-            ))}
-            {message && <p>{message}</p>}
-        </div>
-    );
-};
 
 function LowerMenu() {
     return (
