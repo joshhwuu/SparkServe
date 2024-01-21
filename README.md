@@ -20,3 +20,8 @@ Throughout the development process, our team gained valuable insights into React
 
 ## What's next for SparkServe
 In the future, _SparkServe_ aims to enhance user engagement through the implementation of gamification elements, such as badges and leaderboards, further motivating individuals to volunteer and contribute to their communities.
+
+## Figma
+View the final design here!
+
+[Figma](https://www.figma.com/proto/WCScaXvG4u94MVz70PLfqu/SparkServe?page-id=0%3A1&type=design&node-id=1-2&viewport=-171%2C262%2C0.35&t=icHFO9nlmFeqfzwt-1&scaling=scale-down&starting-point-node-id=1%3A2&show-proto-sidebar=1&mode=design)
