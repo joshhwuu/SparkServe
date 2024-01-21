@@ -21,8 +21,7 @@ function App() {
         }}>
           <Routes>
             <Route path="profile" element={<ProfilePage />} />
-            <Route path="/" element={<Main />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Login />} />
             <Route path="/looking" element={<Looking />} />
             <Route path="/open" element={<Open />} />
           </Routes>
