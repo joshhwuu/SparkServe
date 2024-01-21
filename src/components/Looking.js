@@ -49,7 +49,7 @@ function LookingFor() {
 
     return (
         <div>
-            <StyledLookingFor>Looking for...</StyledLookingFor>
+            <StyledLookingFor>looking for...</StyledLookingFor>
             <ButtonContainer>
                 {buttons.map((button, index) => (
                     <Button

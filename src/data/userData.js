@@ -32,7 +32,10 @@ export const users = [
     "bio": "I'm a hard-working high school senior who loves events in Inglewood!",
     "postal_code": "V6T1X1",
     "location": "Vancouver",
-    "skills": ["Painting", "Recycling Management"],
+    "skills": [
+      "JavaScript", "HTML", "CSS", "React"
+    ],
+    "open_to": ["Volunteering", "Internship", "Part-time", "Full-time"],
     "imageUrl": jaden,
     "prompts": [
       {
@@ -83,7 +86,8 @@ export const users = [
     "postal_code": "M5J2H3",
     "location": "Vancouver, BC",
     "skills": ["Nature advocacy", "Public Speaking", "Research"],
-    "imageUrl": max,
+      "open_to": ["Volunteering", "Internship", "Part-time"],
+      "imageUrl": max,
     "prompts": [
       {
         "id": 1,
@@ -143,6 +147,7 @@ export const users = [
     "location": "Vancouver",
     "skills": ["Graphic design", "Illustration", "Photography"],
     "imageUrl": riley,
+    "open_to": ["Volunteering", "Internship"],
     "prompts": [
       {
         "id": 1,
@@ -193,6 +198,7 @@ export const users = [
     "location": "Vancouver",
     "skills": ["Python", "JavaScript", "React", "Git"],
     "imageUrl": jordan,
+    "open_to": ["Volunteering", "Internship", "Full-time"],
     "prompts": [
       {
         "id": 1,
@@ -242,7 +248,8 @@ export const users = [
     "postal_code": "V6T1X1",
     "location": "Vancouver",
     "skills": ["Recycling" , "Excel", "Childcare"],
-    "imageUrl": louise,
+      "open_to": ["Volunteering", "Internship", "Part-time"],
+      "imageUrl": louise,
     "prompts": [
       {
         "id": 1,

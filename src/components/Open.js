@@ -50,7 +50,7 @@ function FindOpen() {
 
     return (
         <div>
-            <StyledFindOpen>Open to roles in...</StyledFindOpen>
+            <StyledFindOpen>experience in...</StyledFindOpen>
             <ButtonContainer>
                 {buttons.map((button, index) => (
                     <Button
